@@ -1,18 +1,16 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 14.17.0
-    commands:
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-      - source ~/.bashrc
-      - nvm install 14.0.0
-  pre_build:
-    commands:
-      - echo Installing source NPM dependencies...
-      - npm install -g yarn
   build:
     commands:
-      - yarn install
-      - yarn run android
+      - npm install
+      - npm run build
+
+# Define a imagem para o ambiente de compilação
+# Neste exemplo, estamos usando a imagem "aws standard x86_64-4.0"
+# que suporta o Node.js 14
+# Você pode escolher a imagem que melhor atende às suas necessidades
+# Verifique a documentação da AWS para obter informações sobre as imagens de compilação
+# suportadas e suas configurações
+# https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html
+image: aws/codebuild/standard:4.0
