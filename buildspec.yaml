@@ -4,7 +4,6 @@ phases:
   install:
     commands:
       - set -x
-      - nvm install 14.0.0
       - npm install -g npm@latest
       - node -v
       - npm -v
