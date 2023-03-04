@@ -1,9 +1,16 @@
-version: 1.0
-runtime: python3 
-build:
-  commands:
-    build:
-      - pip install pipenv
-      - pipenv install 
-run: 
-  command: python app.py
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+      yarn: 1.22.5
+    commands:
+      - yarn install
+  build:
+    commands:
+      - yarn run android:build
+
+artifacts:
+  files:
+    - 'android/app/build/outputs/apk/debug/app-debug.apk'
