@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+      runtime-versions:
+      nodejs: 14.x
     commands:
       - set -x
       - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
