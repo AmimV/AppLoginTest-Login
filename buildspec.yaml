@@ -4,7 +4,8 @@ phases:
   build:
     commands:
       - npm install
-      - npm run build
+      - npm -g install yarn
+      - yarn run android
 
 # Define a imagem para o ambiente de compilação
 # Neste exemplo, estamos usando a imagem "aws standard x86_64-4.0"
