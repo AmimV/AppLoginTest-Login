@@ -4,13 +4,15 @@ phases:
   install:
     commands:
       - set -x
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+      - source ~/.bashrc
+      - nvm install 14.0.0
       - npm install -g npm@latest
-      - node -v
-      - npm -v
-      - yarn -v
+      - npm install -g yarn
       - yarn install
+    
   build:
-    commands:
+  builcommands:
       - yarn run android:build
 
 artifacts:
