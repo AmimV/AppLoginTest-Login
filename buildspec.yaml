@@ -5,6 +5,7 @@ phases:
     commands:
       - npm install
       - npm -g install yarn
+      - yarn install
       - yarn run android
 
 # Define a imagem para o ambiente de compilação
